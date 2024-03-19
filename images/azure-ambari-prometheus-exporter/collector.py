@@ -268,8 +268,7 @@ class AmbariMetricCollector(object):
             url
             , auth=(ambari_info['AMBARI_USER'], ambari_info['AMBARI_PASS'])
             , headers={'X-Requested-By': 'ambari'}
-            , verify=False
-        )
+            , verify=True)
 
         if response.status_code != requests.codes.ok:
             return {}
